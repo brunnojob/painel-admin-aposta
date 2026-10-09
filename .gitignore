@@ -26,3 +26,12 @@ core.[0-9]*
 *.lock
 !package-lock.json
 !bun.lock
+
+.netlify/
+dist-netlify/
+clients/c/archive
+clients/c/archive-test
+
+build-native/
+
+runtime-regressions

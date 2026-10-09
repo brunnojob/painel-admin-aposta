@@ -24,3 +24,9 @@ Use the [shared operations archive client](https://github.com/brunnojob/vercel-h
 ## License
 
 Original source and documentation are MIT licensed; see [LICENSE](LICENSE). Third-party dependencies and media retain their respective terms. Maintained by [Brunno Dev](https://brunnodev.store).
+
+## Implementation update
+
+The Netlify build publishes the web interface and compatible API functions. The request adapter bounds JSON payloads, rejects ambiguous query strings and preserves handler statuses. Confirmed run receipts include the submitted client key. Configure Supabase URL and publishable key as runtime environment variables.
+
+Contribution trailer: `Co-authored-by: nyctophile <33561761+ineedfoundmyway@users.noreply.github.com>`.

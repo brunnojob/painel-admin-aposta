@@ -55,7 +55,7 @@ export default async function handler(req, res) {
         p_events: events,
       }),
     });
-    return res.status(200).json({ id, persisted: true });
+    return res.status(200).json({ id, clientKey: body.clientKey, persisted: true });
   } catch (error) {
     return sendError(res, error);
   }
