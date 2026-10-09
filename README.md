@@ -19,7 +19,7 @@ Set `SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`. Users create an account and c
 
 ## Optional report archive
 
-Export a JSON report, then run `python cloud/sync.py enqueue result.json --project painel-admin-aposta` and `python cloud/sync.py sync`. Synchronization requires `BRUNNODEV_ACCESS_TOKEN` and the external operations API; the local outbox retains unacknowledged reports.
+Use the [shared operations archive client](https://github.com/brunnojob/vercel-home-telemetry-api/tree/main/cloud) to queue `result.json` under project `painel-admin-aposta`. The client uses `BRUNNODEV_ACCESS_TOKEN` and retains unacknowledged reports locally.
 
 ## License
 
