@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>NOVA Operations</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="muted">NOVA / OPERATIONS</p>
+          <h1>Controle de operações</h1>
+          <p>Ordens de serviço, prioridades e histórico de campo.</p>
+        </div>
+        <button id="logout" hidden>Sair</button>
+      </header>
+      <p id="notice" role="status" aria-live="polite"></p>
+      <section class="panel" id="auth">
+        <h2>Acesse sua conta</h2>
+        <form id="login">
+          <label
+            >E-mail<input
+              id="email"
+              type="email"
+              autocomplete="username"
+              required /></label
+          ><label
+            >Senha<input
+              id="password"
+              type="password"
+              autocomplete="current-password"
+              required /></label
+          ><label
+            >Ação<select id="auth-action">
+              <option value="login">Entrar</option>
+              <option value="signup">Criar conta</option>
+            </select></label
+          ><button>Continuar</button>
+        </form>
+      </section>
+      <div id="workspace" hidden>
+        <section class="cards">
+          <div class="card">
+            Em aberto
+            <div class="big" id="open-count">0</div>
+          </div>
+          <div class="card">
+            Em execução
+            <div class="big" id="active-count">0</div>
+          </div>
+          <div class="card">
+            Concluídas
+            <div class="big" id="closed-count">0</div>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>Nova ordem</h2>
+          <form id="create">
+            <label
+              >Ativo<input
+                id="asset"
+                required
+                pattern="[A-Z0-9_-]{1,32}"
+                placeholder="PUMP-204" /></label
+            ><label
+              >Serviço<input
+                id="title"
+                required
+                minlength="4"
+                maxlength="160" /></label
+            ><label
+              >Prioridade<select id="priority">
+                <option value="low">Baixa</option>
+                <option value="medium">Média</option>
+                <option value="high">Alta</option>
+                <option value="critical">Crítica</option>
+              </select></label
+            ><button>Registrar</button>
+          </form>
+        </section>
+        <section class="panel">
+          <header>
+            <h2>Ordens de serviço</h2>
+            <button id="refresh">Atualizar</button
+            ><button id="export">Exportar JSON</button>
+          </header>
+          <label
+            >Filtrar<input
+              id="filter"
+              type="search"
+              placeholder="Ativo ou serviço"
+          /></label>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Ativo</th>
+                  <th>Serviço</th>
+                  <th>Prioridade</th>
+                  <th>Estado</th>
+                  <th>Ação</th>
+                </tr>
+              </thead>
+              <tbody id="orders"></tbody>
+            </table>
+          </div>
+        </section>
+        <section class="panel">
+          <h2>Telemetria recente</h2>
+          <pre id="telemetry"></pre>
+        </section>
+      </div>
+      <footer>
+        <a href="https://vercel-home-telemetry-api.vercel.app/laboratory.html"
+          >Arquivo de relatórios</a
+        >
+        ·
+        <a href="https://github.com/brunnojob/painel-admin-aposta"
+          >Código-fonte</a
+        >
+      </footer>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
