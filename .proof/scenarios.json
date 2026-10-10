@@ -1,0 +1,59 @@
+{
+  "repository": "brunnojob/painel-admin-aposta",
+  "inputs": [
+    ".proof/scenarios.json",
+    ".proof/demo.mjs"
+  ],
+  "cases": [
+    {
+      "name": "npm ci",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm ci"
+      ],
+      "timeout": 900,
+      "display": false
+    },
+    {
+      "name": "npm test",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm test"
+      ],
+      "timeout": 900,
+      "display": true
+    },
+    {
+      "name": "npm run typecheck",
+      "argv": [
+        "bash",
+        "-e",
+        "-o",
+        "pipefail",
+        "-c",
+        "npm run typecheck"
+      ],
+      "timeout": 900,
+      "display": true
+    },
+    {
+      "name": "Run real Request/Response adapter and enforce input limits",
+      "argv": [
+        "node",
+        ".proof/demo.mjs"
+      ],
+      "contains": [
+        "\"oversized_body\":413"
+      ],
+      "timeout": 120
+    }
+  ]
+}

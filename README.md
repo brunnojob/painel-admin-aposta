@@ -29,4 +29,12 @@ Original source and documentation are MIT licensed; see [LICENSE](LICENSE). Thir
 
 The Netlify build publishes the web interface and compatible API functions. The request adapter bounds JSON payloads, rejects ambiguous query strings and preserves handler statuses. Confirmed run receipts include the submitted client key. Configure Supabase URL and publishable key as runtime environment variables.
 
-Contribution trailer: `Co-authored-by: nyctophile <33561761+ineedfoundmyway@users.noreply.github.com>`.
+Contribution trailer: `Co-authored-by: nyctophile <329826984+ineedfoundmyway@users.noreply.github.com>`.
+
+## Execution proof
+
+[![Executable proof](https://github.com/brunnojob/painel-admin-aposta/actions/workflows/proof.yml/badge.svg)](https://github.com/brunnojob/painel-admin-aposta/actions/workflows/proof.yml)
+
+[Recorded execution and downloadable evidence](https://github.com/brunnojob/painel-admin-aposta/actions/workflows/proof.yml)
+
+Run `python .proof/record.py` after installing the prerequisites above. The scenarios execute repository code and verify exit codes and expected output. CI publishes `execution-proof` with the transcript, input fingerprints and source commit. The downloadable report identifies the exact tested version; the workflow badge tracks the latest run.

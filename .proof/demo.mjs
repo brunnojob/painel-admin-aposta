@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';
+import {adapt} from '../lib/netlify-adapter.mjs';
+const handler=adapt((req,res)=>res.status(201).json({method:req.method,body:req.body,query:req.query}));
+const response=await handler(new Request('https://lab.test/api/runs?project=proof',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({status:'passed'})}));
+assert.equal(response.status,201);
+const receipt=await response.json();
+assert.equal(receipt.body.status,'passed');
+const duplicate=await handler(new Request('https://lab.test/api/runs?x=1&x=2'));
+assert.equal(duplicate.status,400);
+const oversize=await handler(new Request('https://lab.test/api/runs',{method:'POST',headers:{'content-type':'application/json'},body:'x'.repeat(262145)}));
+assert.equal(oversize.status,413);
+console.log(JSON.stringify({accepted:receipt,status:response.status,duplicate_query:duplicate.status,oversized_body:oversize.status}));
