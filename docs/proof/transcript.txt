@@ -13,27 +13,27 @@ npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and con
 npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
-added 404 packages, and audited 405 packages in 11s
+added 404 packages, and audited 405 packages in 9s
 
 38 packages are looking for funding
   run `npm fund` for details
 
 36 vulnerabilities (1 low, 9 moderate, 25 high, 1 critical)
 
-T
+To
 Full transcript in the execution-proof artifact.
 $ bash -e -o pipefail -c npm test
 
 > nova-operations@2.0.0 test
 > node --test tests/*.test.mjs
 
-✔ passes parsed input and preserves endpoint status and headers (42.111697ms)
-✔ rejects duplicated query parameters before calling the handler (1.072988ms)
-✔ limits a streamed payload even without Content-Length (1.254208ms)
-✔ invalid JSON and unsupported content types never reach domain logic (1.567644ms)
-✔ rejects requests without a session before database access (1.699571ms)
-✔ rejects oversized results and never invokes the RPC (39.124396ms)
-✔ forwards the user JWT and maps the RPC persistence result (1.650038ms)
+✔ passes parsed input and preserves endpoint status and headers (32.507407ms)
+✔ rejects duplicated query parameters before calling the handler (0.759951ms)
+✔ limits a streamed payload even without Content-Length (1.103109ms)
+✔ invalid JSON and unsupported content types never reach domain logic (1.1333ms)
+✔ rejects requests without a session before database access (1.276493ms)
+✔ rejects oversized results and never invokes the RPC (33.693747ms)
+✔ forwards the user JWT and maps the RPC persistence result (1.149494ms)
 ℹ tests 7
 ℹ suites 0
 ℹ pass 7
@@ -41,7 +41,7 @@ $ bash -e -o pipefail -c npm test
 ℹ cancelled 0
 ℹ skipped 0
 ℹ todo 0
-ℹ duration_ms 132.993823
+ℹ duration_ms 108.956505
 
 $ bash -e -o pipefail -c npm run typecheck
 
